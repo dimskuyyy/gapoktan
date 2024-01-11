@@ -46,7 +46,7 @@ Website - Login
         var htm = btn.html();
         setLoadingBtn(btn);
         $.ajax({
-            url: base_url + 'wbpanel/login-do',
+            url: base_url + 'admin/login-do',
             type: 'post',
             dataType: 'json',
             data: form.serialize(),

@@ -8,6 +8,9 @@ use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
+use App\Filters\LoginFilter;
+use App\Filters\AdminFilter;
+use App\Filters\WriterFilter;
 
 class Filters extends BaseConfig
 {
@@ -20,6 +23,9 @@ class Filters extends BaseConfig
      * @phpstan-var array<string, class-string|list<class-string>>
      */
     public array $aliases = [
+        'isLoggedIn' => LoginFilter::class, //check if user is loggin
+        'isAdmin' => AdminFilter::class,
+        'isWriter' => WriterFilter::class,
         'csrf'          => CSRF::class,
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
@@ -37,7 +43,7 @@ class Filters extends BaseConfig
     public array $globals = [
         'before' => [
             // 'honeypot',
-            // 'csrf',
+            'csrf',
             // 'invalidchars',
         ],
         'after' => [

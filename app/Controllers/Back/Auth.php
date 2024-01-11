@@ -2,7 +2,6 @@
 
 namespace App\Controllers\Back;
 
-use App\Controllers\BaseController;
 use App\Models\User;
 use CodeIgniter\API\ResponseTrait;
 
