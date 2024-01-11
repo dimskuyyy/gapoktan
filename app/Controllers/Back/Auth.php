@@ -11,7 +11,7 @@ class Auth extends BaseController
     public function login()
     {
         if (!isGuest()) {
-            return redirect()->to('wbpanel');
+            return redirect()->to('admin');
         }
         return view('auth/login');
     }
@@ -20,7 +20,7 @@ class Auth extends BaseController
         $req = $this->request;
         if ($req->isAJAX()) {
             $username = $req->getPost('username');
-            $password = $req->getPost('password');
+            $password = $req->getPost('password') ?? '';
             $data = [
                 'username' => $username,
                 'password' => $password,
