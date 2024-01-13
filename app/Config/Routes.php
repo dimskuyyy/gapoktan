@@ -14,6 +14,6 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Back'], static function
     $routes->post('login-do', 'Auth::doLogin');
 
     $routes->group('/', ['filter' => 'isLoggedIn', 'namespace' => 'App\Controllers\Back'], static function ($routes) {
-        $routes->get('/', 'Home::index');
+        $routes->get('/', 'Dashboard::index');
     });
 });
