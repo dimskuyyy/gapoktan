@@ -32,5 +32,16 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Back'], static function
             $routes->post('save', 'Media::save');
             $routes->post('delete', 'Media::delete');
         });
+
+        $routes->group('post', static function ($routes) {
+            $routes->get('/', 'Post::index');
+            $routes->post('datatable', 'Post::getDatatable');
+            $routes->post('list', 'Post::list');
+            $routes->post('media', 'Post::getMedia');
+            $routes->post('detail', 'Post::getDetailMedia');
+            $routes->post('form', 'Post::form');
+            $routes->post('save', 'Post::save');
+            $routes->post('delete', 'Post::delete');
+        });
     });
 });
