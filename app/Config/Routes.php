@@ -43,5 +43,13 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Back'], static function
             $routes->post('save', 'Post::save');
             $routes->post('delete', 'Post::delete');
         });
+
+        $routes->group('komentar', static function ($routes) {
+            $routes->get('/', 'Komentar::index', ['filter' => 'isAdmin']);
+            $routes->post('list', 'Komentar::list', ['filter' => 'isAdmin']);
+            $routes->post('form', 'Komentar::form', ['filter' => 'isAdmin']);
+            $routes->post('save', 'Komentar::save', ['filter' => 'isAdmin']);
+            $routes->post('delete', 'Komentar::delete', ['filter' => 'isAdmin']);
+        });
     });
 });
