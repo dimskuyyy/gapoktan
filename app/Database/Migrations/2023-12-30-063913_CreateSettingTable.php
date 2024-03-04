@@ -21,6 +21,10 @@ class CreateSettingTable extends Migration
             'set_value' => [
                 'type' => 'TEXT',
             ],
+            'set_additional' => [
+                'type' => 'TEXT',
+                'null' => true
+            ],
             'set_optional' => [
                 'type' => 'TEXT',
                 'null' => true

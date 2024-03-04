@@ -35,7 +35,7 @@ class CreatePostTable extends Migration
             'post_jenis' => [
                 'type' => 'TINYINT',
                 'constraint' => 1,
-                'comment' => '1=berita,2=halaman',
+                'comment' => '1=berita,2=product',
             ],
             'post_media_id' => [
                 'type' => 'INT',

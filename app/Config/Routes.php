@@ -59,5 +59,9 @@ $routes->group('admin', ['namespace' => 'App\Controllers\Back'], static function
             $routes->post('save', 'UserController::save', ['filter' => 'isAdmin']);
             $routes->post('delete', 'UserController::delete', ['filter' => 'isAdmin']);
         });
+
+        $routes->group('product', static function ($routes){
+            $routes->get('/','Product::index',['filter' => 'isAdmin']);
+        });
     });
 });
